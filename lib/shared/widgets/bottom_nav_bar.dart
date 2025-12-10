@@ -1,6 +1,7 @@
 // lib/shared/widgets/bottom_nav_bar.dart
 
 import 'package:flutter/material.dart';
+import 'package:futopia_app/features/auth/screens/login_screen.dart';
 import '../../core/constants/app_colors.dart';
 import '../../features/home/screens/home_screen.dart';
 import '../../features/event/screens/event_screen.dart';
@@ -49,6 +50,9 @@ class BottomNavBar extends StatelessWidget {
               break;
             case 1:
               _navigateTo(context, const EventScreen());
+              break;
+            case 4:
+              _navigateTo(context, const LoginScreen());
               break;            
           }
         },
