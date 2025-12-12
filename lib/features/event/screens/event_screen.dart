@@ -60,7 +60,7 @@ class _EventScreenState extends State<EventScreen> {
                       date: '22 Aug 2025',
                     ),
                     EventCard(
-                      imageUrl: 'https://images.unsplash.com/photo-1595433805517-995f2c0f6334?w=800',
+                      imageUrl: 'https://aists.org/wp-content/uploads/2025/06/AISTS-Article-Featured-Image.jpg',
                       title: 'Summer sports carnival',
                       date: '10 Sep 2025',
                     ),
