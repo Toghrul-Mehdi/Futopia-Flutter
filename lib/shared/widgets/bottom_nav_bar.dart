@@ -1,5 +1,4 @@
 // lib/shared/widgets/bottom_nav_bar.dart
-
 import 'package:flutter/material.dart';
 import 'package:futopia_app/features/auth/screens/login_screen.dart';
 import '../../core/constants/app_colors.dart';
