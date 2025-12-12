@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../shared/widgets/bottom_nav_bar.dart';
 import '../widgets/booking_card.dart';
 
 class MyBookingScreen extends StatefulWidget {
@@ -12,6 +13,7 @@ class MyBookingScreen extends StatefulWidget {
 class _MyBookingScreenState extends State<MyBookingScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  int _selectedIndex = 3; // My booking seçilib
 
   @override
   void initState() {
@@ -25,74 +27,89 @@ class _MyBookingScreenState extends State<MyBookingScreen>
     super.dispose();
   }
 
+  void _onNavTap(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: SafeArea(
-        child: Column(
-          children: [
-            // Header
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    'My booking',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [AppColors.background, AppColors.backgroundDark],
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              // Header
+              const Padding(
+                padding: EdgeInsets.fromLTRB(24, 40, 24, 20),
+                child: Text(
+                  'My booking',
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
-                ],
+                ),
               ),
-            ),
 
-            // Tab Bar
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 20),
-              decoration: BoxDecoration(
-                color: const Color(0xFF1a1f2e),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: TabBar(
-                controller: _tabController,
-                indicator: BoxDecoration(
-                  color: AppColors.primary,
+              // Tab Bar
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF1a1f2e),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                indicatorSize: TabBarIndicatorSize.tab,
-                labelColor: Colors.white,
-                unselectedLabelColor: Colors.grey[400],
-                labelStyle: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
+                child: TabBar(
+                  controller: _tabController,
+                  indicator: BoxDecoration(
+                    color: AppColors.primary,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  labelColor: Colors.white,
+                  unselectedLabelColor: Colors.grey[400],
+                  labelStyle: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  tabs: const [
+                    Tab(text: 'Upcoming'),
+                    Tab(text: 'Completed'),
+                    Tab(text: 'Cancelled'),
+                  ],
                 ),
-                tabs: const [
-                  Tab(text: 'Upcoming'),
-                  Tab(text: 'Completed'),
-                  Tab(text: 'Cancelled'),
-                ],
               ),
-            ),
 
-            const SizedBox(height: 20),
+              const SizedBox(height: 20),
 
-            // Tab Content
-            Expanded(
-              child: TabBarView(
-                controller: _tabController,
-                children: [
-                  _buildUpcomingTab(),
-                  _buildCompletedTab(),
-                  _buildCancelledTab(),
-                ],
+              // Tab Content
+              Expanded(
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    _buildUpcomingTab(),
+                    _buildCompletedTab(),
+                    _buildCancelledTab(),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
+      ),
+
+      // Bottom Navigation Bar - ƏLAVƏ EDİLDİ!
+      bottomNavigationBar: BottomNavBar(
+        currentIndex: _selectedIndex,
+        onTap: _onNavTap,
       ),
     );
   }
@@ -120,6 +137,7 @@ class _MyBookingScreenState extends State<MyBookingScreen>
           price: '\$30',
           status: BookingStatus.upcoming,
         ),
+        SizedBox(height: 100), // Bottom nav üçün boşluq
       ],
     );
   }
@@ -147,6 +165,7 @@ class _MyBookingScreenState extends State<MyBookingScreen>
           price: '\$30',
           status: BookingStatus.completed,
         ),
+        SizedBox(height: 100), // Bottom nav üçün boşluq
       ],
     );
   }
