@@ -1,5 +1,4 @@
 // lib/features/auth/widgets/or_divider.dart
-
 import 'package:flutter/material.dart';
 
 class OrDivider extends StatelessWidget {
