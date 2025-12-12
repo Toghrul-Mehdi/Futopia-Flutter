@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'features/auth/screens/login_screen.dart';
 import 'core/routes/app_routes.dart';
+
 class SportsBookingApp extends StatelessWidget {
   const SportsBookingApp({Key? key}) : super(key: key);
 
