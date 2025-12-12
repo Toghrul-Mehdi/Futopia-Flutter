@@ -1,7 +1,9 @@
 // lib/features/event/widgets/event_card.dart
-
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
+
+// EventDetailScreen-in yolunu əlavə et
+import '../screens/event_detail_screen.dart'; // <-- Öz yoluna uyğunlaşdır
 
 class EventCard extends StatelessWidget {
   final String imageUrl;
@@ -39,8 +41,12 @@ class EventCard extends StatelessWidget {
               height: 220,
               width: double.infinity,
               fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) => Container(
+                color: Colors.grey[300],
+                height: 220,
+                child: const Icon(Icons.broken_image, size: 60, color: Colors.grey),
+              ),
             ),
-
             // Qaranlıq overlay
             Container(
               height: 220,
@@ -55,7 +61,6 @@ class EventCard extends StatelessWidget {
                 ),
               ),
             ),
-
             // Mətn və düymə
             Positioned(
               bottom: 16,
@@ -91,11 +96,15 @@ class EventCard extends StatelessWidget {
                       ],
                     ),
                   ),
-
                   // Explore düyməsi
                   ElevatedButton(
                     onPressed: () {
-                      // TODO: Event detail səhifəsinə keçid
+                      // Event detail səhifəsinə keçid (id olmadan)
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => const EventDetailScreen(),
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green,
