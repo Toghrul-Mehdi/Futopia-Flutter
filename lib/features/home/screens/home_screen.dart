@@ -7,7 +7,6 @@ import '../widgets/quick_booking_card.dart';
 import '../widgets/categories_section.dart';
 import '../widgets/recently_viewed_card.dart';
 import '../widgets/popular_ground_section.dart';
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
