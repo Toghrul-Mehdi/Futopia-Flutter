@@ -1,5 +1,4 @@
 // lib/features/auth/widgets/auth_header.dart
-
 import 'package:flutter/material.dart';
 
 class AuthHeader extends StatelessWidget {
