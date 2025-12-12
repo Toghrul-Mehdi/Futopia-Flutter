@@ -1,5 +1,4 @@
 // lib/features/auth/widgets/skip_button.dart
-
 import 'package:flutter/material.dart';
 import '../../home/screens/home_screen.dart';
 
