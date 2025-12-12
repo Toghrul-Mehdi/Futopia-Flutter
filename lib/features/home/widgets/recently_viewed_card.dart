@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
-
 class RecentlyViewedCard extends StatelessWidget {
   const RecentlyViewedCard({Key? key}) : super(key: key);
 
