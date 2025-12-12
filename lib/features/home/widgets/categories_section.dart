@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
 import 'category_card.dart';
-
 class CategoriesSection extends StatelessWidget {
   const CategoriesSection({Key? key}) : super(key: key);
 
