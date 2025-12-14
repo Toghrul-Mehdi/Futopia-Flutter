@@ -1,10 +1,7 @@
-// lib/features/event/screens/event_screen.dart
-
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../shared/widgets/bottom_nav_bar.dart';
 import '../widgets/event_card.dart';
-
 class EventScreen extends StatefulWidget {
   const EventScreen({Key? key}) : super(key: key);
 
