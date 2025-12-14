@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
 import '../widgets/facility_chip.dart';
-
 class EventDetailScreen extends StatelessWidget {
   const EventDetailScreen({Key? key}) : super(key: key);
 
