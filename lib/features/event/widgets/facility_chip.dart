@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
-
 class FacilityChip extends StatelessWidget {
   final IconData icon;
   final String label;
