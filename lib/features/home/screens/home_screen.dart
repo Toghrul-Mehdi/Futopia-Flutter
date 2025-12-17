@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
-import '../../../shared/widgets/bottom_nav_bar.dart';
 import '../widgets/header_widget.dart';
 import '../widgets/search_bar_widget.dart';
 import '../widgets/quick_booking_card.dart';
 import '../widgets/categories_section.dart';
 import '../widgets/recently_viewed_card.dart';
 import '../widgets/popular_ground_section.dart';
+import '../../../shared/widgets/bottom_nav_bar.dart';
+import '../../grounds/screens/ground_detail_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -27,6 +29,16 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     }
   }
+
+  void _navigateToGroundDetail() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const GroundDetailScreen(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [ // const SİL!
+                children: [
                   const HeaderWidget(),
                   const SizedBox(height: 24),
                   const SearchBarWidget(),
@@ -53,9 +65,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(height: 24),
                   const CategoriesSection(),
                   const SizedBox(height: 24),
-                  const RecentlyViewedCard(), // ƏLAVƏ ET
+                  
+                  // Recently Viewed - Tap edilə bilir
+                  GestureDetector(
+                    onTap: _navigateToGroundDetail,
+                    child: const RecentlyViewedCard(),
+                  ),
                   const SizedBox(height: 24),
-                  const PopularGroundSection(), // ƏLAVƏ ET
+                  
+                  // Popular Ground Section - Tap edilə bilir
+                  GestureDetector(
+                    onTap: _navigateToGroundDetail,
+                    child: const PopularGroundSection(),
+                  ),
                   const SizedBox(height: 80),
                 ],
               ),
@@ -63,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavBar( // ƏLAVƏ ET
+      bottomNavigationBar: BottomNavBar(
         currentIndex: _selectedIndex,
         onTap: _onNavBarTap,
       ),
