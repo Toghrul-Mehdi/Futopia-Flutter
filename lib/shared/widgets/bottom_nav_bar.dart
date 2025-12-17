@@ -5,6 +5,7 @@ import 'package:futopia_app/features/booking/screens/my_booking_screen.dart';
 import '../../core/constants/app_colors.dart';
 import '../../features/home/screens/home_screen.dart';
 import '../../features/event/screens/event_screen.dart';
+
 // digər ekranları da import et
 
 class BottomNavBar extends StatelessWidget {
