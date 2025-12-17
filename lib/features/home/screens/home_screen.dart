@@ -8,7 +8,6 @@ import '../widgets/recently_viewed_card.dart';
 import '../widgets/popular_ground_section.dart';
 import '../../../shared/widgets/bottom_nav_bar.dart';
 import '../../grounds/screens/ground_detail_screen.dart';
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
