@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class GalleryScreen extends StatelessWidget {
   final List<String> images;
 
