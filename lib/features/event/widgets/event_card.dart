@@ -1,6 +1,7 @@
 // lib/features/event/widgets/event_card.dart
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
+
 // EventDetailScreen-in yolunu əlavə et
 import '../screens/event_detail_screen.dart'; // <-- Öz yoluna uyğunlaşdır
 
