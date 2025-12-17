@@ -4,7 +4,6 @@ import '../widgets/ground_type_card.dart';
 import '../widgets/facility_item.dart';
 import '../widgets/feature_chip.dart';
 import 'gallery_screen.dart';
-
 class GroundDetailScreen extends StatefulWidget {
   const GroundDetailScreen({Key? key}) : super(key: key);
 
@@ -251,7 +250,7 @@ class _GroundDetailScreenState extends State<GroundDetailScreen> {
                     ),
                     const SizedBox(height: 12),
                     SizedBox(
-                      height: 80,
+                      height: 110,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: const [
