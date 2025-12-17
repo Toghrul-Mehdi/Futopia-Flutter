@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
+
 enum BookingStatus { upcoming, completed, cancelled }
 class BookingCard extends StatelessWidget {
   final String bookingId;
