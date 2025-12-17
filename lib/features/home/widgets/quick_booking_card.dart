@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
+
 class QuickBookingCard extends StatelessWidget {
   const QuickBookingCard({Key? key}) : super(key: key);
   @override
