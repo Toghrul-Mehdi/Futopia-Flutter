@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
+
 class CategoryCard extends StatelessWidget {
   final String emoji;
   final String title;
