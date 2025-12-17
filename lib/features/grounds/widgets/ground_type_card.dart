@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class GroundTypeCard extends StatelessWidget {
   final String imageUrl;
   final String title;
